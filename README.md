@@ -1,3 +1,4 @@
+
 # smart_reverse_tunnel
 
 `smart_reverse_tunnel` is a project that simplifies the setup and management of reverse SSH tunnels. It includes a shell script and a systemd service to ensure reliable and persistent connections.
@@ -7,12 +8,16 @@
 ### Script: `smart_reverse_tunnel.sh`
 This shell script automates the process of establishing a reverse SSH tunnel. It ensures that the tunnel remains active and automatically reconnects if the connection drops.
 
+#### Functionality
+The script scans all network interfaces, checks their metrics, and starts establishing the tunnel from the interface with the lowest metric. It pings the remote host to ensure connectivity. If the tunnel cannot be established, it moves on to the next interface with a higher metric and continues this process. 
+
 ### Systemd Service: `smart_reverse_tunnel.service`
 The systemd service file configures and manages the `smart_reverse_tunnel` script, ensuring it starts at boot and keeps running continuously.
 
 ## Features
 
 - **Automatic Reconnection**: Ensures that the reverse SSH tunnel is always active.
+- **Interface Selection**: Automatically selects the best network interface based on metrics.
 - **Easy to Configure**: Simple setup with minimal configuration.
 - **Systemd Integration**: Seamless integration with systemd for automatic startup and monitoring.
 
@@ -67,4 +72,3 @@ PING_TIMEOUT=2
    ```sh
    loginctl enable-linger $(whoami)
    ```
-   
