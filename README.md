@@ -16,6 +16,27 @@ The systemd service file configures and manages the `smart_reverse_tunnel` scrip
 - **Easy to Configure**: Simple setup with minimal configuration.
 - **Systemd Integration**: Seamless integration with systemd for automatic startup and monitoring.
 
+## Variables
+The script `smart_reverse_tunnel.sh` includes several variables that need to be configured according to your environment:
+
+```sh
+REMOTE_HOST="10.10.10.10"
+REMOTE_PORT=22
+REMOTE_USER="remoteuser"
+REVERSE_TUNNEL_PORT=2221
+LOCAL_TUNNEL_PORT=222
+PRIVATE_KEY_PATH=""
+PING_TIMEOUT=2
+```
+
+- **REMOTE_HOST**: The IP address or hostname of the remote server.
+- **REMOTE_PORT**: The SSH port on the remote server.
+- **REMOTE_USER**: The username to use for the SSH connection.
+- **REVERSE_TUNNEL_PORT**: The port on the remote server for the reverse tunnel.
+- **LOCAL_TUNNEL_PORT**: The local port to forward.
+- **PRIVATE_KEY_PATH**: Path to the SSH private key (if applicable).
+- **PING_TIMEOUT**: Timeout for the ping check to ensure the tunnel is active.
+
 ## Usage
 
 ### Running as Root
@@ -46,3 +67,4 @@ The systemd service file configures and manages the `smart_reverse_tunnel` scrip
    ```sh
    loginctl enable-linger $(whoami)
    ```
+   
