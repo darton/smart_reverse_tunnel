@@ -11,7 +11,7 @@ This shell script automates the process of establishing a reverse SSH tunnel. It
 The script scans all network interfaces, checks their metrics, and starts establishing the tunnel from the interface with the lowest metric. It pings the remote host to ensure connectivity. If the tunnel cannot be established, it moves on to the next interface with a higher metric and continues this process. 
 
 ### Systemd Service: `smart_reverse_tunnel.service`
-The systemd service file configures and manages the `smart_reverse_tunnel` script, ensuring it starts at boot and keeps running continuously.
+The systemd service file configures and manages the `smart_reverse_tunnel.sh` script, ensuring it starts at boot and keeps running continuously.
 
 ## Features
 
