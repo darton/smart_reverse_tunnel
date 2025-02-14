@@ -3,8 +3,8 @@ Description=Smart Reverse SSH Tunnel Service
 After=network-online.target
 
 [Service]
-ExecStart=/home/${USER}/scripts/smart_reverse_tunnel.sh
-User=${USER}
+ExecStart=/home/localuser/scripts/smart_reverse_tunnel.sh
+User=localuser
 Restart=on-failure
 RestartSec=60s
 #StartLimitBurst=5
