@@ -90,6 +90,7 @@ sudo yum install autossh
    ```sh
    mkdir -p ~/.config/systemd/user
    cp smart_reverse_tunnel.service ~/.config/systemd/user/
+   systemctl --user daemon-reload
    ```
 5. Enable and start the systemd service for the user:
    ```sh
