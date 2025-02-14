@@ -72,8 +72,14 @@ sudo yum install autossh
    ```sh
    chmod +x /home/localuser/scripts/smart_reverse_tunnel.sh
    ```
-4. Enable and start the systemd service:
+4. Move the `smart_reverse_tunnel.service` file to the systemd directory:
    ```sh
+   cp smart_reverse_tunnel.service /etc/systemd/system/
+   systemctl daemon-reload
+   ```
+5. Enable and start the systemd service:
+   ```sh
+   sudo systemctl daemon-reload
    sudo systemctl enable smart_reverse_tunnel.service
    sudo systemctl start smart_reverse_tunnel.service
    ```
