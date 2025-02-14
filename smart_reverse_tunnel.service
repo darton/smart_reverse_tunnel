@@ -4,7 +4,7 @@ After=network-online.target
 
 [Service]
 ExecStart=/home/localuser/scripts/smart_reverse_tunnel.sh
-User=localuser
+#User=localuser #Uncomment then run systemd as a root user
 Restart=on-failure
 RestartSec=60s
 #StartLimitBurst=5
