@@ -47,7 +47,7 @@ The script `smart_reverse_tunnel.service` includes several variables that need t
 ```sh
 [Service]
 ExecStart=/home/localuser/scripts/smart_reverse_tunnel.sh
-User=localuser
+#User=localuser #Uncomment then run systemd as root 
 ```
 
 ## Installation of `autossh`
