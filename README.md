@@ -1,6 +1,6 @@
 # smart_reverse_tunnel
 
-`smart_reverse_tunnel` is a project that simplifies the setup and management of reverse SSH tunnels. It includes a shell script and a systemd service to ensure reliable and persistent connections.
+`smart_reverse_tunnel` is a project that simplifies the setup and management of reverse SSH tunnel based on autossh. It includes a shell script and a systemd service to ensure reliable and persistent connections.
 
 ## Components
 
