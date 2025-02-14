@@ -41,6 +41,15 @@ PING_TIMEOUT=2
 - **PRIVATE_KEY_PATH**: Path to the SSH private key (if applicable).
 - **PING_TIMEOUT**: Timeout for the ping check to ensure the tunnel is active.
 
+
+The script `smart_reverse_tunnel.service` includes several variables that need to be configured according to your environment:
+
+```sh
+[Service]
+ExecStart=/home/localuser/scripts/smart_reverse_tunnel.sh
+User=localuser
+```
+
 ## Installation of `autossh`
 
 ### Debian
