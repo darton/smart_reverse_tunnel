@@ -3,7 +3,7 @@ Description=Reverse SSH Tunnel Service
 After=network-online.target
 
 [Service]
-ExecStart=/opt/gateway/scripts/autossh_reverse_tunnel.sh
+ExecStart=/home/localuser/scripts/autossh_reverse_tunnel.sh
 User=localuser
 Restart=on-failure
 RestartSec=60s
