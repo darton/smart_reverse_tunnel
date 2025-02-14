@@ -43,7 +43,7 @@ PING_TIMEOUT=2
 
 ## Installation of `autossh`
 
-### Ubuntu/Debian
+### Debian
 ```sh
 sudo apt install autossh
 ```
@@ -53,14 +53,17 @@ sudo apt install autossh
 sudo yum install autossh
 ```
 
-
 ## Usage
 
 ### Running as Root
 
 1. Copy the `smart_reverse_tunnel.sh` script to your desired location (e.g., `/home/localuser/scripts/`).
 2. Adjust the script and service file as needed.
-3. Enable and start the systemd service:
+3. **Ensure the script has executable permissions**:
+   ```sh
+   chmod +x /home/localuser/scripts/smart_reverse_tunnel.sh
+   ```
+4. Enable and start the systemd service:
    ```sh
    sudo systemctl enable smart_reverse_tunnel.service
    sudo systemctl start smart_reverse_tunnel.service
@@ -70,17 +73,21 @@ sudo yum install autossh
 
 1. Copy the `smart_reverse_tunnel.sh` script to your desired location (e.g., `/home/localuser/scripts/`).
 2. Adjust the script and service file to match the user's environment.
-3. Move the `smart_reverse_tunnel.service` file to the user's systemd directory:
+3. **Ensure the script has executable permissions**:
+   ```sh
+   chmod +x /home/localuser/scripts/smart_reverse_tunnel.sh
+   ```
+4. Move the `smart_reverse_tunnel.service` file to the user's systemd directory:
    ```sh
    mkdir -p ~/.config/systemd/user
    cp smart_reverse_tunnel.service ~/.config/systemd/user/
    ```
-4. Enable and start the systemd service for the user:
+5. Enable and start the systemd service for the user:
    ```sh
    systemctl --user enable smart_reverse_tunnel.service
    systemctl --user start smart_reverse_tunnel.service
    ```
-5. Make sure the user services are started at login:
+6. Make sure the user services are started at login:
    ```sh
    loginctl enable-linger $(whoami)
    ```
